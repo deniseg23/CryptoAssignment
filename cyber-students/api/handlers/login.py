@@ -20,7 +20,7 @@ class LoginHandler(BaseHandler):
         }
 
         yield self.db.users.update_one({
-            'email': email
+            'email': encrypt_data(email)
         }, {
             '$set': token
         })

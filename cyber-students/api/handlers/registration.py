@@ -68,7 +68,7 @@ class RegistrationHandler(BaseHandler):
 
         yield self.db.users.insert_one({
             'email':encrypt_data(email),
-            'password':encrypt_data(password),
+            'password':encrypt_password(password),
             'displayName':encrypt_data(display_name),
             'Address':encrypt_data(Address),
             'dob':encrypt_data(dob),

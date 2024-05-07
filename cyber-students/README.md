@@ -113,14 +113,15 @@ browser.  Instead we will use `curl` to interact with the server.
 To register a new user:
 
 ```sh
-curl -X POST http://localhost:4000/students/api/registration -d "{\"email\": \"foo@bar.com\", \"password\": \"pass\", \"displayName\": \"Foo Bar\"}"
+
+curl -X POST http://localhost:4000/students/api/registration -d "{\"email\": \"fooo23@bar.com\", \"password\": \"pass\", \"displayName\": \"Foo Bar\",\"PhoneNumber\": \"na\",\"dob\": \"2 feb\",\"Address\": \"4 street\",\"Disabilities\": \"many\"}"
 ```
 
 If the registration is successful, it will confirm the email address
 and the display name of the newly registered user:
 
 ```
-{"email": "foo@bar.com", "displayName": "Foo Bar"}
+{"email": "fooo23@bar.com", "displayName": "Foo Bar"}
 ```
 
 If the registration is unsuccessful, for example, if you try to
@@ -135,7 +136,7 @@ register the same user twice, it will return an error message:
 To login:
 
 ```sh
-curl -X POST http://localhost:4000/students/api/login -d "{\"email\": \"foo@bar.com\", \"password\": \"pass\"}"
+curl -X POST http://localhost:4000/students/api/login -d "{\"email\": \"fooo23@bar.com\", \"password\": \"pass\"}"
 ```
 
 If the login is successful, it will return a token and expiration
