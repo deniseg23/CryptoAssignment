@@ -28,7 +28,7 @@ class AuthHandler(BaseHandler):
             'email': 1,
             'displayName': 1,
             'PhoneNumber': 1,
-            'DateOfBirth': 1,
+            'dob': 1,
             'Address': 1,
             'Disabilities': 1,
             'expiresIn': 1
@@ -49,7 +49,7 @@ class AuthHandler(BaseHandler):
             'email': user['email'],
             'display_name': user['displayName'],
             'PhoneNumber': user['PhoneNumber'],
-            'DateOfBirth': user['DateOfBirth'],
+            'dob': user['dob'],
             'Address': user['Address'],
             'Disabilities': user['Disabilities']
         }

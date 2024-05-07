@@ -3,7 +3,7 @@ from time import mktime
 from tornado.escape import json_decode, utf8
 from tornado.gen import coroutine
 from uuid import uuid4
-from api.encryption import encrypt_data, decrypt_data, hashedPassword
+from api.encryption import encrypt_data, encrypt_password
 from .base import BaseHandler
 
 class LoginHandler(BaseHandler):
@@ -56,10 +56,11 @@ class LoginHandler(BaseHandler):
         })
 
         if user is None:
-            self.send_error(403, message='The email address and password are invalid!')
+            self.send_error(403, message='The user email address and password are invalid!')
             return
 
         if user['password'] != encrypt_password(password):
+            print(encrypt_password(password))
             self.send_error(403, message='The email address and password are invalid!')
             return
 
